@@ -6,7 +6,8 @@ const students = [
         semester: 3,
         interests: ["Educação", "Tecnologia"],
         company: "Innovators",
-        initials: "AS"
+        initials: "AS",
+        photo: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
         id: 2,
@@ -14,7 +15,8 @@ const students = [
         semester: 5,
         interests: ["Agronegócio", "Sustentabilidade"],
         company: "Winners",
-        initials: "CS"
+        initials: "CS",
+        photo: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         id: 3,
@@ -22,7 +24,8 @@ const students = [
         semester: 2,
         interests: ["Educação", "Saúde"],
         company: "Dreamer",
-        initials: "MC"
+        initials: "MC",
+        photo: "https://randomuser.me/api/portraits/women/65.jpg"
     },
     {
         id: 4,
@@ -30,7 +33,8 @@ const students = [
         semester: 4,
         interests: ["Tecnologia", "Finanças"],
         company: "Builder",
-        initials: "RL"
+        initials: "RL",
+        photo: "https://randomuser.me/api/portraits/men/71.jpg"
     },
     {
         id: 5,
@@ -38,7 +42,8 @@ const students = [
         semester: 1,
         interests: ["Educação"],
         company: "Winners",
-        initials: "JP"
+        initials: "JP",
+        photo: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
         id: 6,
@@ -46,7 +51,8 @@ const students = [
         semester: 6,
         interests: ["Agronegócio", "Tecnologia"],
         company: "Creators",
-        initials: "PO"
+        initials: "PO",
+        photo: "https://randomuser.me/api/portraits/men/46.jpg"
     },
     {
         id: 7,
@@ -54,7 +60,8 @@ const students = [
         semester: 3,
         interests: ["Saúde", "Sustentabilidade"],
         company: "Builder",
-        initials: "FR"
+        initials: "FR",
+        photo: "https://randomuser.me/api/portraits/women/72.jpg"
     },
     {
         id: 8,
@@ -62,7 +69,8 @@ const students = [
         semester: 5,
         interests: ["Tecnologia"],
         company: "Dreamer",
-        initials: "LM"
+        initials: "LM",
+        photo: "https://randomuser.me/api/portraits/men/85.jpg"
     },
     {
         id: 9,
@@ -70,7 +78,8 @@ const students = [
         semester: 2,
         interests: ["Finanças", "Educação"],
         company: "Creators",
-        initials: "CF"
+        initials: "CF",
+        photo: "https://randomuser.me/api/portraits/women/79.jpg"
     },
     {
         id: 10,
@@ -78,7 +87,8 @@ const students = [
         semester: 4,
         interests: ["Sustentabilidade", "Agronegócio"],
         company: "Innovators",
-        initials: "DA"
+        initials: "DA",
+        photo: "https://randomuser.me/api/portraits/men/91.jpg"
     }
 ];
 
@@ -193,7 +203,10 @@ function renderStudents(studentsToRender) {
         studentCard.className = 'student-card';
         studentCard.style.cursor = 'pointer';
         studentCard.innerHTML = `
-            <div class="student-photo">${student.initials}</div>
+            <div class="student-photo">
+                <img src="${student.photo}" alt="${student.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="student-initials" style="display:none;">${student.initials}</div>
+            </div>
             <div class="student-name">${student.name}</div>
             <div class="student-semester">${student.semester}º Semestre</div>
             <div class="student-interests">
@@ -377,7 +390,10 @@ function openStudentModal(student) {
     const contactBtn = document.getElementById('contact-btn');
     
     // Populate modal with student data
-    modalPhoto.textContent = student.initials;
+    modalPhoto.innerHTML = `
+        <img src="${student.photo}" alt="${student.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="student-initials" style="display:none;">${student.initials}</div>
+    `;
     modalName.textContent = student.name;
     modalSemester.textContent = `${student.semester}º Semestre`;
     modalTurma.textContent = `Turma ${student.company}`;
