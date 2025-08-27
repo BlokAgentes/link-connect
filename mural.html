@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Connect - Mural</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Link Connect</h1>
+            <nav>
+                <a href="index.html">Perfis</a>
+                <a href="mural.html" class="active">Mural</a>
+                <a href="avisos.html">Avisos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Mural de Perguntas e Ideias</h2>
+            <p>Compartilhe suas dúvidas e projetos com a comunidade Link</p>
+        </div>
+
+        <!-- Add Post Button (Collapsed State) -->
+        <div class="add-post-button-container">
+            <button id="expand-post-btn" class="btn-expand-post">
+                <span class="plus-icon">+</span>
+                <span>Criar novo post</span>
+            </button>
+        </div>
+
+        <!-- Add Post Section (Expanded State) -->
+        <div class="add-post-section" id="add-post-section" style="display: none;">
+            <div class="add-post-header">
+                <h3>Fazer uma nova pergunta ou compartilhar ideia</h3>
+                <button id="collapse-post-btn" class="btn-collapse-post">×</button>
+            </div>
+            <form id="new-post-form" class="post-form">
+                <div class="form-group">
+                    <label for="author">Seu nome:</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Pergunta ou ideia:</label>
+                    <textarea id="content" name="content" rows="4" placeholder="Ex: Preciso de contato de fornecedor agro..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Área (opcional):</label>
+                    <select id="tags" name="tags">
+                        <option value="">Selecionar área</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Agronegócio">Agronegócio</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Sustentabilidade">Sustentabilidade</option>
+                        <option value="Finanças">Finanças</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Publicar</button>
+                    <button type="button" id="cancel-post-btn" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="posts-section">
+            <h3>Perguntas e Ideias Recentes</h3>
+            <div id="posts-container" class="posts-container">
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Connect - Perfis dos Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Link Connect</h1>
+            <nav>
+                <a href="index.html" class="active">Perfis</a>
+                <a href="mural.html">Mural</a>
+                <a href="avisos.html">Avisos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Conecte-se com seus colegas</h2>
+            <p>Encontre alunos da Link com interesses similares</p>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="semestre-filter">Filtrar por semestre:</label>
+                <select id="semestre-filter">
+                    <option value="">Todos os semestres</option>
+                    <option value="1">1º Semestre</option>
+                    <option value="2">2º Semestre</option>
+                    <option value="3">3º Semestre</option>
+                    <option value="4">4º Semestre</option>
+                    <option value="5">5º Semestre</option>
+                    <option value="6">6º Semestre</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="interesse-filter">Filtrar por área de interesse:</label>
+                <select id="interesse-filter">
+                    <option value="">Todas as áreas</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Agronegócio">Agronegócio</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Sustentabilidade">Sustentabilidade</option>
+                    <option value="Finanças">Finanças</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="students-grid" class="students-grid">
+        </div>
+    </main>
+
+    <!-- Student Modal -->
+    <div id="student-modal-overlay" class="modal-overlay">
+        <div id="student-modal" class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Perfil do Aluno</h2>
+                <button class="modal-close" id="modal-close-btn">×</button>
+            </div>
+            <div class="modal-content">
+                <div class="student-modal-photo" id="modal-student-photo"></div>
+                <div class="student-modal-info">
+                    <div class="student-modal-name" id="modal-student-name"></div>
+                    <div class="student-modal-semester" id="modal-student-semester"></div>
+                    <div class="student-modal-turma" id="modal-student-turma"></div>
+                </div>
+                <div class="student-modal-interests">
+                    <h4>Áreas de Interesse</h4>
+                    <div class="modal-interests-tags" id="modal-student-interests"></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-contact" id="contact-btn">
+                        <span>💬</span>
+                        Entrar em Contato
+                    </button>
+                    <button class="btn-secondary" id="modal-close-btn2">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
