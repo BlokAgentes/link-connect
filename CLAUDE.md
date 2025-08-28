@@ -35,9 +35,10 @@ This is a single-page application with multiple HTML files sharing common resour
 
 Since this is a static HTML/CSS/JavaScript application, no build tools or package managers are configured. To work with this codebase:
 
-- **Local development**: Use a local web server (e.g., `python -m http.server 8000` or Live Server extension)
+- **Local development**: Start local server with `python3 -m http.server 8000` or `npx http-server -p 8000`, then access `http://localhost:8000`
 - **File editing**: Direct editing of HTML, CSS, and JavaScript files
 - **Testing**: Open pages in browser and test functionality manually
+- **No linting/build**: No npm scripts or build tools configured
 
 ## File Structure
 
@@ -57,11 +58,25 @@ Since this is a static HTML/CSS/JavaScript application, no build tools or packag
 - **CSS Grid/Flexbox**: Modern layout techniques throughout
 - **Mobile-first**: Responsive design with mobile breakpoints at 768px
 - **Portuguese language**: All content and UI text in Brazilian Portuguese
+- **Design system**: shadcn/ui inspired theme with dark blue color scheme (#0D1E3B, #112A54)
+- **Mock data**: All data stored in JavaScript arrays at top of script.js
+
+## Student Classification
+
+Students are organized into 5 companies/turmas:
+- **Builder** 🔨, **Dreamer** 💭, **Innovators** 💡, **Winners** 🏆, **Creators** 🎨
+
+Interest categories: Tecnologia, Educação, Agronegócio, Saúde, Sustentabilidade, Finanças
 
 ## Key Functions
 
 - `renderStudents()`: Dynamically generates student profile cards
 - `filterStudents()`: Handles filtering by semester and interests
+- `openStudentModal()`: Opens detailed student modal with contact functionality
 - `renderPosts()`: Creates post cards for the mural
 - `handleNewPost()`: Processes new post form submissions
+- `toggleComments()`: Shows/hides comments section for posts
+- `addComment()`: Adds new comments to posts
 - `renderAnnouncements()`: Displays announcement cards
+- `generateStudentEmail()`: Auto-generates student email addresses based on name
+- `copyEmailToClipboard()`: Handles email copying functionality with fallback

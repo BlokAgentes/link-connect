@@ -231,10 +231,12 @@ function renderStudents(studentsToRender) {
     
     studentsGrid.innerHTML = '';
     
-    studentsToRender.forEach(student => {
+    studentsToRender.forEach((student, index) => {
         const studentCard = document.createElement('div');
         studentCard.className = 'student-card';
         studentCard.style.cursor = 'pointer';
+        studentCard.style.animationDelay = `${index * 0.1}s`;
+        studentCard.classList.add('scale-in');
         studentCard.innerHTML = `
             <div class="student-photo">
                 <img src="${student.photo}" alt="${student.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">

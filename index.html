@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Connect - Perfis dos Alunos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -64,29 +67,41 @@
                 <button class="modal-close" id="modal-close-btn">×</button>
             </div>
             <div class="modal-content">
-                <div class="student-modal-photo" id="modal-student-photo"></div>
-                <div class="student-modal-info">
-                    <div class="student-modal-name" id="modal-student-name"></div>
-                    <div class="student-modal-semester" id="modal-student-semester"></div>
-                    <div class="student-modal-turma" id="modal-student-turma"></div>
-                </div>
-                <div class="student-modal-interests">
-                    <h4>Áreas de Interesse</h4>
-                    <div class="modal-interests-tags" id="modal-student-interests"></div>
-                </div>
-                <div class="contact-banner" id="contact-banner">
-                    <div class="contact-banner-content">
-                        <div class="contact-email-section">
-                            <span class="contact-label">Email estudantil:</span>
-                            <span class="contact-email" id="contact-email"></span>
-                        </div>
-                        <button class="btn-copy-email" id="copy-email-btn">
-                            Copiar Email
-                        </button>
+                <div class="modal-profile-section">
+                    <div class="student-modal-photo" id="modal-student-photo"></div>
+                    <div class="student-modal-info">
+                        <div class="student-modal-name" id="modal-student-name"></div>
+                        <div class="student-modal-semester" id="modal-student-semester"></div>
+                        <div class="student-modal-turma" id="modal-student-turma"></div>
                     </div>
                 </div>
+                
+                <div class="modal-details-section">
+                    <div class="student-modal-interests">
+                        <h4>Áreas de Interesse</h4>
+                        <div class="modal-interests-tags" id="modal-student-interests"></div>
+                    </div>
+                    
+                    <div class="contact-banner" id="contact-banner">
+                        <div class="contact-banner-header">
+                            <h4>Informações de Contato</h4>
+                        </div>
+                        <div class="contact-banner-content">
+                            <div class="contact-email-section">
+                                <span class="contact-label">Email LSB</span>
+                                <div class="email-row">
+                                    <span class="contact-email" id="contact-email"></span>
+                                    <button class="btn-copy-email" id="copy-email-btn">
+                                        <span class="copy-text">Copiar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="modal-actions">
-                    <button class="btn-contact" id="contact-btn">
+                    <button class="btn-contact btn-primary" id="contact-btn">
                         <span>💬</span>
                         Entrar em Contato
                     </button>
